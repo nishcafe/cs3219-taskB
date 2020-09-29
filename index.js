@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/fooddiary', {useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -25,7 +25,7 @@ else
     console.log("Db connected successfully")
 
 // Setup server port
-var port = process.env.PORT;
+var port = process.env.PORT || 8080;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Welcome to your food diary!'));
