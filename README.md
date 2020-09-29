@@ -19,10 +19,10 @@ A food diary is used to illustrate API calls. Each food entry is has a required 
         }
 ```
 
-* `GET`, `http://localhost:8080/api/food` : To get all entries in the food diary
-* `PUT`, `http://localhost:8080/api/food`,  : To create a new entry in the food diary, with fields specified in Body key-value table of Postman
-* `PATCH`, `http://localhost:8080/api/food/:id` : To edit an entry, specified by `id` in Path Variables & fields to edit specified in Body key-value table of Postman
-* `DELETE`, `http://localhost:8080/api/food/:id` : To delete an entry, specified by `id` in Path Variables of Postman
+* `GET`, `http://localhost:8080/api/food` : To get all entries in the food diary.
+* `PUT`, `http://localhost:8080/api/food`,  : To create a new entry in the food diary, with fields specified in Body key-value table of Postman.
+* `PATCH`, `http://localhost:8080/api/food/:id` : To edit an entry, specified by `id` in Path Variables & fields to edit specified in Body key-value table of Postman.
+* `DELETE`, `http://localhost:8080/api/food/:id` : To delete an entry, specified by `id` in Path Variables of Postman.
 
 
 
