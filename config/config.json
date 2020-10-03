@@ -1,0 +1,5 @@
+{
+    "PORT": 8080,
+    "DB_URI": "mongodb://localhost/fooddiary",
+    "DB_TEST": "mongodb://localhost/fooddiarytest"
+}
