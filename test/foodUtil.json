@@ -1,0 +1,14 @@
+{
+    "food_OK" : { "name" : "hot chocolate",
+                  "calories" : 4500,
+                  "price" : 4.50
+                },
+    
+    "food_without_name" : { "name" : "",
+                            "calories" : 10
+                          },
+    
+    "fields_to_update" : { "calories" : 200
+                         }
+
+}

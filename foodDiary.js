@@ -5,12 +5,12 @@ Food = require('./foodModel');
 exports.index = function(req, res) {
     Food.get(function(err, foodItems) {
         if(err) {
-            res.json({
+            return res.json({
                 status: "error",
                 message: err,
             });
         }
-        res.json({
+        return res.json({
             status: "success",
             message: "Food retrieved successfully",
             data: foodItems
@@ -28,8 +28,8 @@ exports.new = function(req, res) {
     //save the food item & check for errors
     food.save(function(err) {
         if(err)
-            res.json(err);
-        res.json({
+           return res.send(err);
+        return res.json({
             message:'Food Diary updated',
             data: food
         });
@@ -41,8 +41,8 @@ exports.view = function(req, res) {
     Food.findById(req.params.food_id, 
         function(err, food) {
             if (err)
-                res.send(err);
-            res.json({
+                return res.send(err);
+            return res.json({
                 message: 'Food details loading...',
                 data: food
             });
@@ -54,7 +54,7 @@ exports.update = function(req, res) {
     Food.findById(req.params.food_id, 
         function(err, food) {
             if(err)
-                res.send(err);
+                return res.send(err);
 
             food.name = req.body.name ? req.body.name : food.name;
             food.calories = req.body.calories;
@@ -63,8 +63,8 @@ exports.update = function(req, res) {
             //save the contact & check for errors
             food.save(function(err) {
                 if (err)
-                    res.json(err);
-                res.json({
+                    return res.json(err);
+                return res.json({
                     message:'Food info updated',
                     data: food
                 });
@@ -78,9 +78,9 @@ exports.delete = function(req, res) {
         _id:req.params.food_id
     }, function(err, food) {
         if(err)
-            res.send(err);
+            return res.send(err);
         
-        res.json({
+        return res.json({
             status: "success",
             message: "Food deleted"
         });

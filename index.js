@@ -38,3 +38,5 @@ app.use('/api', apiRoutes);
 app.listen(config.PORT, function () {
     console.log("Running FoodDiary on port " + config.PORT);
 });
+
+module.exports = app;
