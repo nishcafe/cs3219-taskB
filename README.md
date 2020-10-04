@@ -30,5 +30,6 @@ A food diary is used to illustrate API calls. Each food entry is has a required 
 Deployed endpoints can be accessed at: [https://nishcafe-fooddiary.herokuapp.com/](https://nishcafe-fooddiary.herokuapp.com/)
 
 ### To run tests locally (Task B2)
-1. `mongod` to start local mongodb (test) database
-2. `npm test` to run all tests
+1. `npm install` to install node modules
+2. `mongod` to start local mongodb (test) database
+3. `npm test` to run all tests
