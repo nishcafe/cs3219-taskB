@@ -17,7 +17,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect(config.DB_URI, {useNewUrlParser: true});
+if(process.env.NODE_ENV == 'dev') {
+    mongoose.connect(config.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+} else {
+    mongoose.connect(config.DB_TEST, {useNewUrlParser: true, useUnifiedTopology: true});
+}
 var db = mongoose.connection;
 
 // Added check for DB connection

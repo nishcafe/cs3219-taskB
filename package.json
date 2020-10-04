@@ -4,8 +4,7 @@
   "description": "An app demonstrating a simple Restful API implementation ",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon index.js",
+    "start": "SET NODE_ENV=dev && node index.js",
     "test": "mocha --exit"
   },
   "keywords": [

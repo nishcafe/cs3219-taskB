@@ -1,8 +1,6 @@
-let config = require('../config/config.json')
-let mongoose = require('mongoose');
+process.env.NODE_ENV='test';
 
 let testUtil = require('./foodUtil.json');
-// mongoose.connect(config.DB_TEST, {useNewUrlParser: true});
 
 var Food = require('../foodModel.js');
 
