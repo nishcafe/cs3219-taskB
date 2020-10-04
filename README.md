@@ -1,4 +1,4 @@
-# cs3219-taskB
+# cs3219-taskB [![Build Status](https://travis-ci.org/nishcafe/cs3219-taskB.svg?branch=master)](https://travis-ci.org/nishcafe/cs3219-taskB)
 
 A simple Javascript backend and REST API with NodeJs, ExpressJs, MongoDB.
 
