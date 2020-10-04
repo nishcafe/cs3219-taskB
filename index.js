@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect(config.DB_URI, {useNewUrlParser: true});
+mongoose.connect( process.env.MONGO_URL, {useNewUrlParser: true});
 var db = mongoose.connection;
 
 // Added check for DB connection
@@ -27,7 +27,7 @@ else
     console.log("Db connected successfully")
 
 // Setup server port
-// var port = process.env.PORT || 8080;
+var port = process.env.PORT;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Welcome to your food diary!'));
@@ -35,8 +35,8 @@ app.get('/', (req, res) => res.send('Welcome to your food diary!'));
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
-app.listen(config.PORT, function () {
-    console.log("Running FoodDiary on port " + config.PORT);
+app.listen(port, function () {
+    console.log("Running FoodDiary on port " + port);
 });
 
 module.exports = app;
